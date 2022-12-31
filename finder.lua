@@ -21,7 +21,7 @@ end
 
 
 local subbed = search:sub(#search - #search * 0.5 , #search):lower()
-rconsolename("FUNCTION SEARCHER | "..getexploit().." | v0.0.1")
+rconsolename("FUNCTION SEARCHER | API "..getexploit().." | v0.0.1")
 rconsoleclear()
 rconsoleprint("@@GREEN@@")
 rconsoleprint("-- [[ FOUND FUNCTIONS FOR "..search.." ]] --\n")
