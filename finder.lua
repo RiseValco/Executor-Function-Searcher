@@ -21,7 +21,7 @@ end
 
 
 local subbed = search:sub(#search - #search * 0.5 , #search):lower()
-rconsolename("FUNCTION SEARCHER | DLL "..getexploit().." | v0.0.1")
+rconsolename("FUNCTION SEARCHER | DLL "..getexploit().." | dsc.gg/grimcity | v0.0.1")
 rconsoleclear()
 rconsoleprint("@@GREEN@@")
 rconsoleprint("-- [[ FOUND FUNCTIONS FOR "..search.." ]] --\n")
