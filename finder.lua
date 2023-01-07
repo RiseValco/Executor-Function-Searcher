@@ -1,4 +1,4 @@
-local search = _G.Search or "all" -- PUT SEARCH HERE
+local search = _G.Search or "all"
 
 local function getexploit() --https://v3rmillion.net/showthread.php?tid=1027440
   local exploit =
@@ -19,16 +19,23 @@ local function getexploit() --https://v3rmillion.net/showthread.php?tid=1027440
   return exploit
 end
 
-
+function searchF(q)
+    local t = {}
+    for _,v in pairs(getgenv()) do
+       if string.find(_:lower(), q) and search:lower() ~= "all" then
+           table.insert(t, _)
+         elseif search:lower() == "all" then
+           table.insert(t, _)
+        end
+    end
+    return t
+end
 local subbed = search:sub(#search - #search * 0.5 , #search):lower()
-rconsolename("FUNCTION SEARCHER | DLL "..getexploit().." | dsc.gg/grimcity | v0.0.1")
+local results = searchF(subbed)
+rconsolename("FUNCTION SEARCHER | DLL "..getexploit().." | dsc.gg/grimcity | v0.0.2")
 rconsoleclear()
 rconsoleprint("@@GREEN@@")
-rconsoleprint("-- [[ FOUND FUNCTIONS FOR "..search.." ]] --\n")
-for _,v in pairs(getgenv()) do
-   if string.find(_:lower(), subbed) and search:lower() ~= "all" then
-       rconsoleinfo(_)
-     elseif search:lower() == "all" then
-     rconsoleinfo(_)
-    end
+rconsoleprint("-- [[ FOUND " .. #results .. ' FUNCTIONS FOR "'..search..'" ]] --\n')
+for _,v in pairs(results) do
+    rconsoleinfo(v)
 end
